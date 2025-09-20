@@ -1,0 +1,57 @@
+/*
+ * EduFlow-AcademySuite Theme
+ * Applies the Fit4Future brand identity using the new logo colors.
+ */
+
+:root {
+    /* Override Bootstrap's default theme colors */
+    --bs-primary: #0A2540;      /* Deep Navy from the logo */
+    --bs-secondary: #6c757d;    /* Default Bootstrap secondary */
+    --bs-success: #00D27F;      /* Vibrant Green from the logo */
+    
+    /* Custom variables */
+    --bs-dark-blue: #0A2540;
+    --bs-vibrant-green: #00D27F;
+}
+
+/* --- Button Overrides --- */
+.btn-primary {
+    background-color: var(--bs-vibrant-green);
+    border-color: var(--bs-vibrant-green);
+}
+
+.btn-primary:hover {
+    background-color: #00b36b; /* A slightly darker green for hover */
+    border-color: #00a562;
+}
+
+/* --- Sidebar Styling --- */
+#sidebar-wrapper {
+    background-color: var(--bs-dark-blue) !important;
+}
+
+#sidebar-wrapper .list-group-item {
+    color: #ced4da;
+    background-color: var(--bs-dark-blue);
+    border: none;
+}
+
+#sidebar-wrapper .list-group-item:hover,
+#sidebar-wrapper .list-group-item.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-left: 4px solid var(--bs-vibrant-green);
+}
+
+#sidebar-wrapper .sidebar-heading {
+    background-color: var(--bs-dark-blue) !important;
+}
+
+/* --- General Theming --- */
+a {
+    color: var(--bs-vibrant-green);
+}
+
+a:hover {
+    color: #00b36b;
+}

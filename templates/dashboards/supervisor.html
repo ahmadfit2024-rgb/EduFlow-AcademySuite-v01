@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block title %}Supervisor Dashboard{% endblock %}
+{% block content %}
+<h1>Welcome, Supervisor {{ user.full_name|default:user.username }}!</h1>
+<p>From here, you can build and manage learning paths and programs.</p>
+{% endblock %}

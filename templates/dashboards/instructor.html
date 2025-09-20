@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block title %}Instructor Dashboard{% endblock %}
+{% block content %}
+<h1>Welcome, Instructor {{ user.full_name|default:user.username }}!</h1>
+<p>This is your space to manage course content and track student engagement.</p>
+{% endblock %}

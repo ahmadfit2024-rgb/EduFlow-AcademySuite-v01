@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Reporting Dashboard{% endblock %}
+{% block content %}
+    <h1>{{ title }}</h1>
+    <p>Select the desired report and apply filters to generate and download.</p>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Generate Report</h5>
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="report_type" class="form-label">Report Type</label>
+                    <select class="form-select" id="report_type" name="report_type">
+                        <option value="student_pdf">Student Performance (PDF)</option>
+                        <option value="course_excel">Course Enrollments (Excel)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Generate Report</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

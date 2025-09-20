@@ -1,0 +1,32 @@
+{% load static user_roles %}
+<div class="bg-dark border-end" id="sidebar-wrapper">
+    <div class="sidebar-heading border-bottom bg-dark text-white p-3">
+        <img src="{% static 'images/logo_EduFlow-AcademySuite.png' %}" alt="EduFlow Logo" style="max-height: 40px;">
+    </div>
+    <div class="list-group list-group-flush">
+        <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="{% url 'dashboard' %}">{% trans "Dashboard" %}</a>
+        
+        {% if request.user|has_role:'admin' %}
+            <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#">{% trans "User Management" %}</a>
+            <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="{% url 'report_dashboard' %}">{% trans "Platform Reports" %}</a>
+        {% endif %}
+
+        {% if request.user|has_role:'supervisor' or request.user|has_role:'admin' %}
+            <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#">{% trans "Learning Path Builder" %}</a>
+        {% endif %}
+
+        {% if request.user|has_role:'instructor' %}
+            <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#">{% trans "My Courses" %}</a>
+            <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#">{% trans "Student Progress" %}</a>
+        {% endif %}
+        
+        {% if request.user|has_role:'student' %}
+            <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#">{% trans "My Learning" %}</a>
+            <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#">{% trans "Certificates" %}</a>
+        {% endif %}
+        
+        {% if request.user|has_role:'third_party' %}
+            <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#">{% trans "Employee Progress" %}</a>
+        {% endif %}
+    </div>
+</div>

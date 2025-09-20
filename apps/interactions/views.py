@@ -1,0 +1,1 @@
+# Placeholder for frontend views related to discussions.
